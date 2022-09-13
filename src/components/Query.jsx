@@ -1,28 +1,31 @@
 
 import { PrismicRichText, useAllPrismicDocumentsByType } from '@prismicio/react'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { BookContext } from '../contexts/BookContext';
 import api from '../services/api';
 
 export default function CustomQuery() {
+  const { books } = useContext(BookContext);
 
   const [data, setData] = useState([]);
 
-  // create function fetch data async
-  const fetchData = async () => {
-    const response = await api.get("https://bookapp.prismic.io/api/v2/documents/search?ref=YyDt4xEAACIASipZ&src=apibrowser#format=html");
-    setData(response.data.results);
+  const fetchOrder = async () => {
+    setData(books);
   }
 
   useEffect(() => {
-    while (data.length === 0) {
-      fetchData();
-    }
-    console.log(data);
-  },[data])
+    fetchOrder();
+    console.log(data[0]);
+  }, [books])
+
+
 
    return (
     <>
-    <h1>Galo</h1>
+      {data.length < 1 ? (
+        <p>Loading...</p>
+        ) :
+        (data[0].data.author[0].text)}
     </>
   )
 }
