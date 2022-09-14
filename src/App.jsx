@@ -6,8 +6,8 @@ import {
 
 import { PrismicProvider } from '@prismicio/react'
 import { client } from './services/prismic';
-import CustomQuery from './components/Query';
 import BookContextProvider from './contexts/BookContext';
+import Books from './components/Books/Books';
 
 function App() {
 
@@ -15,8 +15,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <PrismicProvider client={client}>
         <BookContextProvider>
-          <h1>Home(GALO)</h1>
-          <CustomQuery />
+          <Books />
         </BookContextProvider>
       </PrismicProvider>
     </ChakraProvider>
