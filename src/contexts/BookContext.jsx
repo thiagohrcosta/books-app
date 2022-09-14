@@ -8,7 +8,7 @@ export default function BookContextProvider({children}) {
   const [books, setBooks] = useState([]);
 
   const fetchOrder = async () => {
-    const response = await api.get("https://bookapp.prismic.io/api/v2/documents/search?ref=YyDt4xEAACIASipZ&src=apibrowser#format=html");
+    const response = await api.get("https://bookapp.prismic.io/api/v2/documents/search?ref=YyEbexEAACIASvbP");
     setBooks(response.data.results);
   }
 
