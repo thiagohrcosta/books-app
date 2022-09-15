@@ -40,7 +40,7 @@ export default function BookCard({
             flexDirection='column'
           >
             <Text>
-              {title}
+              {title} ({year})
             </Text>
             <Text
               color={'gray.800'}
@@ -48,9 +48,6 @@ export default function BookCard({
               textTransform={'uppercase'}
             >
               by {author}
-            </Text>
-            <Text>
-              ({year})
             </Text>
           </Box>
           <Text
