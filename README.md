@@ -11,3 +11,7 @@ This project was developed with the objective of consuming data sent by an API o
 
 ## Technologies used
 - [Prismic](https://prismic.io/)
+
+## How it´s work?
+![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1663208240/api1_tbmyfu.png)
+According to the content added by the user, the CMS provides an API as shown below, making it possible to directly fetch or use Prismic's own forms and queries.
