@@ -7,18 +7,22 @@ import {
 import { PrismicProvider } from '@prismicio/react'
 import { client } from './services/prismic';
 import BookContextProvider from './contexts/BookContext';
-import Books from './components/Books/Books';
-import HomeBanner from './components/HomeBanner';
+import { RoutesPath } from './routes';
+import Navbar from './components/Navbar';
+import DarkModeContextProvider from './contexts/DarkModeContext';
 
 function App() {
 
   return (
     <ChakraProvider theme={theme}>
       <PrismicProvider client={client}>
-        <BookContextProvider>
-          <HomeBanner />
-          <Books />
-        </BookContextProvider>
+        <DarkModeContextProvider>
+          <BookContextProvider>
+            <Navbar />
+            <RoutesPath>
+            </RoutesPath>
+          </BookContextProvider>
+        </DarkModeContextProvider>
       </PrismicProvider>
     </ChakraProvider>
   );

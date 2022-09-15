@@ -6,7 +6,7 @@ export default function HomeBanner() {
       backgroundImage={"https://res.cloudinary.com/dloadb2bx/image/upload/v1663204672/dark_ev9lll.jpg"}
       backgroundRepeat="no-repeat"
       backgroundSize={'100% 100%'}
-      height={300}
+      height={450}
       width={'100%'}
     >
 

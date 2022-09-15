@@ -1,4 +1,6 @@
 import { Box, Button, Container, Image, Text } from "@chakra-ui/react";
+import { useContext } from "react";
+import { DarkModeContext } from "../../contexts/DarkModeContext";
 
 export default function BookCard({
   key,
@@ -8,13 +10,16 @@ export default function BookCard({
   author,
   cover
 }) {
+
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
     <Container
       margin={'50px auto'}
     >
       <Box
         borderWidth='1px'
-        bgColor={'gray.100'}
+        bgColor={darkMode == false ? 'gray.100' : 'gray.700'}
         borderRadius='lg'
         width={500}
         height={300}
@@ -43,7 +48,7 @@ export default function BookCard({
               {title} ({year})
             </Text>
             <Text
-              color={'gray.800'}
+              color={darkMode == true ? 'gray.100' : 'gray.800'}
               fontWeight='bold'
               textTransform={'uppercase'}
             >
@@ -55,7 +60,8 @@ export default function BookCard({
             {description.substring(0, 120)}...
           </Text>
           <Button
-              colorScheme='blue'
+              bgColor={darkMode == true ? 'blue.400' : 'blue.500'}
+              color={'white'}
               width={100}
               margin={'10px 0px'}
             >More</Button>
