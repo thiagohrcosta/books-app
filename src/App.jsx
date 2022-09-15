@@ -8,6 +8,7 @@ import { PrismicProvider } from '@prismicio/react'
 import { client } from './services/prismic';
 import BookContextProvider from './contexts/BookContext';
 import Books from './components/Books/Books';
+import HomeBanner from './components/HomeBanner';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <PrismicProvider client={client}>
         <BookContextProvider>
+          <HomeBanner />
           <Books />
         </BookContextProvider>
       </PrismicProvider>
