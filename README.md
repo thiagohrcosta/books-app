@@ -2,7 +2,7 @@
 
 # Book App
 
-This project was developed with the objective of consuming data sent by an API of a CMS. The Frontend was developed using ChakraUI using the icons provided by Phosphor Icons.
+This is a serverless project developed with the objective of consuming data sent by an API of a CMS. The Frontend was developed using ChakraUI and the icons provided by Phosphor Icons. 
 
 ## Development
 
